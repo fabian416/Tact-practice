@@ -16,6 +16,10 @@ contract FirstContract with Deployable {
         self.counter = self.counter + 1;
     }
     
+    receive("decrement") {
+        self.counter -= 1;
+    }
+    
     receive(msg: Add) { 
         self.counter =  self.counter + msg.amount;
     }
